@@ -9,7 +9,7 @@ export const getRobotsId = async (req: Request, res: Response) => {
     res.status(404).json({ error: "Robot not found" });
   }
 
-  res.status(201).json({ Robot });
+  res.status(201).json({ getRobotId });
 };
 
 export const getRobots = async (

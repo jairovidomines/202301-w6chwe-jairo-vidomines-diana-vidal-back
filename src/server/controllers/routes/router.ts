@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { getRobotsId } from "../robotsControllers";
+import { getRobotsId } from "../robotsControllers.js";
 
 // eslint-disable-next-line new-cap
 export const robotsRouter = Router();
 
-robotsRouter.get("/", getRobotsId);
+robotsRouter.get("/:id", getRobotsId);
