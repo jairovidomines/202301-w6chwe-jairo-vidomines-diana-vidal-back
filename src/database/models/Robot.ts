@@ -4,11 +4,9 @@ const robotSchema = new Schema({
   id: String,
   name: String,
   image: String,
-  stats: {
-    speed: String,
-    endurance: String,
-    creationDate: String,
-  },
+  speed: String,
+  endurance: String,
+  creationDate: String,
 });
 
 const Robot = model("Robot", robotSchema, "robots");
