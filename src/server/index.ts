@@ -1,8 +1,8 @@
 import express from "express";
-import { robotsRouter } from "./controllers/routes/router";
+import { robotsRouter } from "./routers/router.js";
 
 export const app = express();
-app.disable("x-powered-by");
+// App.disable("x-powered-by");
 
 app.use(express.json());
 app.use("/robots", robotsRouter);
