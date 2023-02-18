@@ -1,15 +1,16 @@
 import mongoose from "mongoose";
-import debugCreator from "debug";
 import chalk from "chalk";
+import debug from "debug";
 
-const debug = debugCreator("robots: database");
+const debugRobot = debug("robots: database");
 
 const connectDatabase = async (mongoUrl: string) => {
+  mongoose.set("strictQuery", false);
   try {
     await mongoose.connect(mongoUrl);
-    debug(chalk.green("Succesful connection"));
+    debugRobot(chalk.green("Succesful connection"));
   } catch (error: unknown) {
-    debug(
+    debugRobot(
       chalk.red("Impossible to connect to database", (error as Error).message)
     );
   }
