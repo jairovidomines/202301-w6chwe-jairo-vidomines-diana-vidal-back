@@ -1,16 +1,6 @@
-import Robot from "../../database/models/Robot.js";
+import Robot from "../../database/models/Robots.js";
 import { type Request, type Response, type NextFunction } from "express";
 import CustomError from "../../CustomError/CustomError.js";
-
-export const getRobotsId = async (req: Request, res: Response) => {
-  const { id } = req.params;
-  const getRobotId = await Robot.findById(id);
-  if (!Robot) {
-    res.status(404).json({ error: "Robot not found" });
-  }
-
-  res.status(201).json({ getRobotId });
-};
 
 export const getRobots = async (
   req: Request,
@@ -29,4 +19,14 @@ export const getRobots = async (
     );
     next(customError);
   }
+};
+
+export const getRobotsId = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const getRobotId = await Robot.findById(id);
+  if (!Robot) {
+    res.status(404).json({ error: "Robot not found" });
+  }
+
+  res.status(201).json({ getRobotId });
 };
