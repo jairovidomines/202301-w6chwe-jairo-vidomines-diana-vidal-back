@@ -6,9 +6,11 @@
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
+    "test": "react-scripts test --passWithNoTests",
     "start": "node dist",
     "start:dev": "node --watch dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:coverage": "react-scripts test --coverage --watchAll=false --passWithNoTests"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +26,13 @@
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
     "husky": "^8.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts"
+    ]
   }
 }
