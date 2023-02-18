@@ -1,12 +1,9 @@
 import "./loadEnvironment.js";
-import express from "express";
-
-const app = express();
+import connectDatabase from "./database/connectDatabase.js";
+import { startServer } from "./server/server.js";
 
 const port = process.env.PORT ?? 4001;
+const mongoUrl = process.env.MONGODB_CONNECTION_URL;
 
-app.get("/robots", (req, res) => {
-  res.status(201).json({ pong: true });
-});
-
-app.listen(port);
+await connectDatabase(mongoUrl!);
+await startServer(+port);
