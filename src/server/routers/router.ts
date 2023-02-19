@@ -5,4 +5,4 @@ import { getRobots, getRobotsId } from "../controllers/robotsControllers.js";
 export const robotsRouter = Router();
 
 robotsRouter.get("/", getRobots);
-robotsRouter.get("/", getRobotsId);
+robotsRouter.get("/:idRobot", getRobotsId);
