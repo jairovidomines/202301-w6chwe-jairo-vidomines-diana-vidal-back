@@ -7,7 +7,7 @@ const robotSchema = new Schema({
   stats: {
     speed: String,
     endurance: String,
-    creationDate: String,
+    creationDate: Date,
   },
 });
 
