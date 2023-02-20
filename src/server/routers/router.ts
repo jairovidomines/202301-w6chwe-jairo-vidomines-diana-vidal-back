@@ -10,4 +10,4 @@ export const usersRouter = Router();
 robotsRouter.get("/", getRobots);
 robotsRouter.get("/:idRobot", getRobotById);
 
-usersRouter.get("/", loginUser);
+usersRouter.get("/login", loginUser);
